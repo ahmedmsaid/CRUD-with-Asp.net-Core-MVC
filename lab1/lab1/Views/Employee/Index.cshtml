@@ -1,0 +1,22 @@
+﻿@model List<Employee>
+@{
+    Layout = "_temp";
+}
+
+    <table class="table table-striped">
+        <thead>
+            <td>Name</td>
+        </thead>
+        <tbody>
+        @foreach(var emp in Model)
+        {
+            <tr>
+            <td>@emp.Name</td>
+            <td><button type="button" class="btn btn-info" ><a class="btn btn-info" href="/employee/details/@emp.SSN">Details</a></button></td>
+            <td><button type="button" class="btn btn-secondary"><a class="btn btn-secondary" href="/employee/update/@emp.SSN">Edit</a></button></td>
+            <td><button type="button" class="btn btn-danger"><a class="btn btn-danger" href="/employee/Delete/@emp.SSN">Delete</a></button></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary"><a class="btn btn-primary" href="/employee/create">Add</a></button>

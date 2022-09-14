@@ -1,0 +1,33 @@
+﻿@model Employee
+@{
+    Layout = "_otherLayout";
+}
+
+    <h1>Edit Employee</h1>
+    <form asp-action="update" asp-controller="employee" method="post">
+        <input type="number" name="SSN" value=@Model.SSN hidden/>
+
+        <label for="Name" class="form-label">Name</label>
+        <input asp-for="Name" class="form-control" placeholder="Enter Name"/>
+        <span asp-validation-for="Name" class="alert alert-danger"></span>
+
+        <label for="Address" class="form-label">Address</label>
+        <input class="form-control" type="text" id="Address" name="Address" placeholder="Enter Address" value=@Model.Address />
+        <span asp-validation-for="Address" class="alert alert-danger"></span>
+
+        <label for="Age" class="form-label">Age</label>
+        <input asp-for="Age" class="form-control" placeholder="Enter Age"/>
+        <span asp-validation-for="Age" class="alert alert-danger"></span>
+
+        <label for="Salary" class="form-label">Salary</label>
+        <input asp-for="Salary" class="form-control" placeholder="Enter Salary"/>
+        <span asp-validation-for="Salary" class="alert alert-danger"></span>
+
+        <input class="btn btn-dark" type="submit" value="Save" />
+    </form>
+
+@section scripts{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
